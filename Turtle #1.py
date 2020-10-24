@@ -13,7 +13,7 @@ print("Задача:\nНарисовать черепашкой выбранну
       "8: Правильные многоугольники")
 
 x = int(input())
-if x == 1:                   # Буква S
+elif x == 1:                   # Буква S
     turtle.shape('turtle')
     turtle.forward(50)
     turtle.left(90)
@@ -26,7 +26,7 @@ if x == 1:                   # Буква S
     turtle.forward(50)
     time.sleep(3)
 
-if x == 2:                   # Квадрат
+elif x == 2:                   # Квадрат
     turtle.shape('turtle')
     turtle.penup()
     turtle.goto(-75,75)
@@ -41,7 +41,8 @@ if x == 2:                   # Квадрат
     turtle.right(90)
     time.sleep(3)
 
-if x == 3:                  # Круг
+elif x == 3:                  # Круг
+    turtle.shape('turtle')
     y = 1
     while y < 360:
         turtle.forward(1)
@@ -49,8 +50,8 @@ if x == 3:                  # Круг
         y += 1
     time.sleep(3)
 
-if x == 4:                  # Вложенные квадраты
-    print("Сколько нарисовать квадратов")
+elif x == 4:                  # Вложенные квадраты
+    print("Сколько нарисовать квадратов:")
     y = int(input())        # Указываем колличество квадратов, которое будет нарисованно
     n = 20                  # Длинна грани первого квадрата в центре
     while y > 0:
@@ -71,3 +72,41 @@ if x == 4:                  # Вложенные квадраты
         n += 20             # Увеличиваем размер грани следущего квадрата
         y -= 1
         time.sleep(3)
+
+elif x == 5:                   # Звевда
+    print("Сколько лучей будет у звезды:")
+    y = int(input())        # задаем колличество лучей
+    z = 360/y
+    while y > 0:
+        turtle.shape('turtle')
+        turtle.forward(100)
+        turtle.stamp()
+        turtle.backward(100)
+        turtle.right(z)
+        y -= 1
+        time.sleep(3)
+
+elif x ==6:                       # Спираль
+    print("Введите число витков спирали")
+    a = int(input())
+    p = (a/2*3.14)*5
+    for a in range(50):
+        turtle.shape('turtle')
+        turtle.forward(1)
+        turtle.right(a)
+        a += 1
+        time.sleep(3)
+
+elif x == 7:
+    l = 5
+    turtle.shape('turtle')
+    while l < 100:
+        turtle.forward(l)
+        turtle.right(90)
+        l += 5
+        time.sleep(3)
+
+
+
+
+
