@@ -13,7 +13,7 @@ print("Задача:\nНарисовать черепашкой выбранну
       "8: Правильные многоугольники")
 
 x = int(input())
-elif x == 1:                   # Буква S
+if x == 1:                  # Буква S
     turtle.shape('turtle')
     turtle.forward(50)
     turtle.left(90)
@@ -86,21 +86,19 @@ elif x == 5:                   # Звевда
         y -= 1
         time.sleep(3)
 
-elif x ==6:                       # Спираль
-    print("Введите число витков спирали")
-    a = int(input())
-    p = (a/2*3.14)*5
-    for a in range(50):
+elif x == 6:                       # Спираль
+    a = 2
+    for a in range(200):
         turtle.shape('turtle')
         turtle.forward(1)
         turtle.right(a)
-        a += 1
+        a += 2
         time.sleep(3)
 
-elif x == 7:
+elif x == 7:                      # Квадратноая спираль
     l = 5
     turtle.shape('turtle')
-    while l < 100:
+    while l < 100:                # задаем предел увеличения длинны грани спирали
         turtle.forward(l)
         turtle.right(90)
         l += 5
