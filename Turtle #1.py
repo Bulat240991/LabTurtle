@@ -87,12 +87,12 @@ elif x == 5:                   # Звевда
         time.sleep(3)
 
 elif x == 6:                       # Спираль
-    a = 2
+    a = 360
     for a in range(200):
         turtle.shape('turtle')
-        turtle.forward(1)
+        turtle.forward(5)
         turtle.right(a)
-        a += 2
+        a -= 5
         time.sleep(3)
 
 elif x == 7:                      # Квадратноая спираль
@@ -104,7 +104,25 @@ elif x == 7:                      # Квадратноая спираль
         l += 5
         time.sleep(3)
 
+elif x == 8:
+    import math
+    radius = 10
+    side = 3
+    def polygons(length_side, side):    # вводим функцию рисования многоугольника
+        angle = 360 / side
+        while side > 0:
+            turtle.left(angle)
+            turtle.forward(length_side)
+            side -= 1
+    while side < 13:
+        length_side = 2 * radius * math.sin(math.pi / side)
+        half_angle = (180 - 360 / side) / 2
+        turtle.left(half_angle)
 
-
-
-
+        polygons(length_side, side)
+        turtle.right(half_angle)
+        turtle.penup()
+        turtle.forward(10)
+        turtle.pendown()
+        side += 1
+        radius += 10
